@@ -5,7 +5,7 @@ let color2 = document.querySelector(".color2");
 let body = document.getElementById("gradient");
 let random = document.getElementById("random");
 
-if (window.innerWidth <= 768) {
+if (window.innerWidth <= 1200) {
     h4.textContent = "Click me"
 }
 
