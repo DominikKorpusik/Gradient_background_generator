@@ -4,31 +4,36 @@ let color2 = document.querySelector(".color2");
 let body = document.getElementById("gradient");
 let random = document.getElementById("random")
 
-function setGradient() {
+function setGradient(cl1, cl2) {
     body.style.background =
-        `linear-gradient(to right, ${color1.value}, ${color2.value})`;
+        `linear-gradient(to right, ${cl1}, ${cl2})`;
+    linearGradientText(cl1, cl2);
 }
 
-function h3textContent(cl1, cl2) {
+function linearGradientText(cl1, cl2) {
     css.textContent = `linear-gradient(to right, ${cl1}, ${cl2});`;
 }
 
-color1.addEventListener("input", setGradient)
-
-color2.addEventListener("input", setGradient)
-
-h3textContent(color1.value, color2.value)
-
-const randColor = () => {
+function randColor() {
     return "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0').toUpperCase();
 }
 
-random.addEventListener("keydown", function (event) {
+color1.addEventListener("input", () => {
+    setGradient(color1.value, color2.value)
+})
+
+color2.addEventListener("input", () => {
+    setGradient(color1.value, color2.value)
+})
+
+linearGradientText(color1.value, color2.value)
+
+body.addEventListener("keydown", function (event) {
     var c1 = randColor();
     var c2 = randColor();
     if (event.key === ` `) {
-        body.style.background =
-            `linear-gradient(to right, ${c1}, ${c2})`;
-        h3textContent(c1, c2)
+        setGradient(c1, c2)
+        color1.value = c1;
+        color2.value = c2;
     }
 })
