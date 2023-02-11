@@ -18,6 +18,14 @@ function randColor() {
     return "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0').toUpperCase();
 }
 
+function randGradient() {
+    var c1 = randColor();
+    var c2 = randColor();
+    setGradient(c1, c2)
+    color1.value = c1;
+    color2.value = c2;
+}
+
 color1.addEventListener("input", () => {
     setGradient(color1.value, color2.value)
 })
@@ -29,11 +37,10 @@ color2.addEventListener("input", () => {
 linearGradientText(color1.value, color2.value)
 
 body.addEventListener("keydown", function (event) {
-    var c1 = randColor();
-    var c2 = randColor();
     if (event.key === ` `) {
-        setGradient(c1, c2)
-        color1.value = c1;
-        color2.value = c2;
+        randGradient()
     }
 })
+
+body.addEventListener("click", randGradient)
+
