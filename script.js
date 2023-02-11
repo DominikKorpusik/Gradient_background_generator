@@ -1,8 +1,13 @@
 let css = document.querySelector("h3");
+let h4 = document.querySelector("h4");
 let color1 = document.querySelector(".color1");
 let color2 = document.querySelector(".color2");
 let body = document.getElementById("gradient");
-let random = document.getElementById("random")
+let random = document.getElementById("random");
+
+if (window.innerWidth <= 768) {
+    h4.textContent = "Click me"
+}
 
 function setGradient(cl1, cl2) {
     body.style.background =
@@ -43,4 +48,3 @@ body.addEventListener("keydown", function (event) {
 })
 
 body.addEventListener("click", randGradient)
-
