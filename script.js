@@ -1,9 +1,9 @@
-let css = document.querySelector("h3");
-let h4 = document.querySelector("h4");
-let color1 = document.querySelector(".color1");
-let color2 = document.querySelector(".color2");
-let body = document.getElementById("gradient");
-let random = document.getElementById("random");
+const css = document.querySelector("h3");
+const h4 = document.querySelector("h4");
+const color1 = document.querySelector(".color1");
+const color2 = document.querySelector(".color2");
+const body = document.getElementById("gradient");
+const random = document.getElementById("random");
 
 if (window.innerWidth <= 1200) {
     h4.textContent = "Click me"
@@ -24,8 +24,8 @@ function randColor() {
 }
 
 function randGradient() {
-    var c1 = randColor();
-    var c2 = randColor();
+    let c1 = randColor();
+    let c2 = randColor();
     setGradient(c1, c2)
     color1.value = c1;
     color2.value = c2;
