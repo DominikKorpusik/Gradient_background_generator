@@ -7,6 +7,7 @@ const random = document.getElementById("random");
 
 if (window.innerWidth <= 1200) {
     h4.textContent = "Click me"
+    h4.addEventListener("click", randGradient)
 }
 
 function setGradient(cl1, cl2) {
@@ -47,4 +48,3 @@ body.addEventListener("keydown", function (event) {
     }
 })
 
-body.addEventListener("click", randGradient)
