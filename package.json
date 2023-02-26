@@ -4,8 +4,11 @@
   "description": "[Gradient Background Generator](https://dominikkorpusik.github.io/Gradient_background_generator/)",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "browserify script.js > bundle.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
 }
